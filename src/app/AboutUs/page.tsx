@@ -17,7 +17,7 @@ const AboutUs: React.FC = () => {
               About Us
             </h1>
             <p className="text-sm sm:text-base text-gray-500">
-              Home / Pages / <span className="text-pink-500">About Us</span>
+              Home / Pages / <span className="text-pink-500">&quot;About Us&quot;</span>
             </p>
           </div>
         </header>
@@ -46,7 +46,7 @@ const AboutUs: React.FC = () => {
               href="#"
               className="inline-block bg-pink-500 text-white px-6 py-3 rounded-lg shadow-md hover:bg-pink-600"
             >
-              Learn More
+              &quot;Learn More&quot;
             </a>
           </div>
         </section>
@@ -57,7 +57,7 @@ const AboutUs: React.FC = () => {
             <h2 className="text-center text-3xl font-bold mb-12">Our Features</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
               {/* Feature Card */}
-              {[
+              {[ 
                 { title: "Free Delivery", icon: "🚚", description: "Get your products delivered for free" },
                 { title: "Win Cash Back", icon: "💸", description: "Earn cashback on every purchase" },
                 { title: "Quality Product", icon: "✔️", description: "Only the highest quality products" },
