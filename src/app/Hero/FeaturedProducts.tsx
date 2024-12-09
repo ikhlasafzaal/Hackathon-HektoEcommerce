@@ -1,5 +1,6 @@
 import React from "react";
 import { FaHeart, FaShoppingCart, FaSearchPlus } from "react-icons/fa"; // Import the icons
+import Image from "next/image"; // Import the Image component if using Next.js
 
 const FeaturedProducts = () => {
   return (
@@ -9,10 +10,26 @@ const FeaturedProducts = () => {
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {[
-          { name: "Comfort Chair", price: "$400", images: ["/images/image 3.png", "/images/image 3.png", "/images/image 3.png"] },
-          { name: "Modern Sofa", price: "$600", images: ["/images/image 3.png", "/images/image 3.png", "/images/image 3.png"] },
-          { name: "Stylish Lamp", price: "$150", images: ["/images/image 3.png", "/images/image 3.png", "/images/image 3.png"] },
-          { name: "Desk Chair", price: "$250", images: ["/images/image 3.png", "/images/image 3.png", "/images/image 3.png"] },
+          {
+            name: "Comfort Chair",
+            price: "$400",
+            images: ["/images/image 3.png", "/images/image 3.png", "/images/image 3.png"],
+          },
+          {
+            name: "Modern Sofa",
+            price: "$600",
+            images: ["/images/image 3.png", "/images/image 3.png", "/images/image 3.png"],
+          },
+          {
+            name: "Stylish Lamp",
+            price: "$150",
+            images: ["/images/image 3.png", "/images/image 3.png", "/images/image 3.png"],
+          },
+          {
+            name: "Desk Chair",
+            price: "$250",
+            images: ["/images/image 3.png", "/images/image 3.png", "/images/image 3.png"],
+          },
         ].map((product, index) => (
           <div
             key={index}
@@ -34,8 +51,10 @@ const FeaturedProducts = () => {
             {/* Image Slider */}
             <div className="relative group">
               <div className="slider-container">
-                <img
+                <Image
                   src={product.images[0]}
+                  width={300} // Adjust width based on your design
+                  height={300} // Adjust height based on your design
                   className="w-full h-48 object-cover rounded-xl group-hover:opacity-75 transition-all duration-300"
                   alt="Product Image"
                   style={{ objectFit: "cover" }} // Ensures the image covers the area of the div without distortion
@@ -53,7 +72,9 @@ const FeaturedProducts = () => {
                 <span className="text-gray-600"><b>•</b></span>
                 <span className="text-gray-600"><b>•</b></span>
               </div>
-              <p className="mt-2 text-lg text-purple-600 transition-all duration-300">{product.price}</p>
+              <p className="mt-2 text-lg text-purple-600 transition-all duration-300">
+                {product.price}
+              </p>
             </div>
 
             {/* Button and Hover Effect */}

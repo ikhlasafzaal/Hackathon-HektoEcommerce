@@ -1,14 +1,17 @@
 import React from "react";
 import { FaHeart, FaShoppingCart, FaSearchPlus } from "react-icons/fa"; // Import the icons
+import Image from "next/image"; // Import Next.js Image component
 
 const LatestProducts: React.FC = () => {
   const categories = ["New Arrival", "Best Seller", "Featured", "Special Offer"];
-  const products = Array(8).fill({
-    name: "Comfort Handy Craft",
-    price: 42.0,
-    originalPrice: 65.0,
-    sale: true, // Toggle for showing the sale badge
-  });
+  const products = [
+    { name: "Modern Chair", price: "$450", image: "/images/image 1170.png" },
+    { name: "Elegant Sofa", price: "$500", image: "/images/image 1171.png" },
+    { name: "Table Lamp", price: "$100", image: "/images/image 1172.png" },
+    { name: "Modern Chair", price: "$450", image: "/images/image 1170.png" },
+    { name: "Elegant Sofa", price: "$500", image: "/images/image 1171.png" },
+    { name: "Table Lamp", price: "$100", image: "/images/image 1172.png" },
+  ];
 
   return (
     <section className="py-16 bg-white">
@@ -36,19 +39,23 @@ const LatestProducts: React.FC = () => {
 
         {/* Product Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {[{ name: "Modern Chair", price: "$450", image: "/images/image 1170.png" }, { name: "Elegant Sofa", price: "$500", image: "/images/image 1171.png" }, { name: "Table Lamp", price: "$100", image: "/images/image 1172.png" },{ name: "Modern Chair", price: "$450", image: "/images/image 1170.png" }, { name: "Elegant Sofa", price: "$500", image: "/images/image 1171.png" }, { name: "Table Lamp", price: "$100", image: "/images/image 1172.png" }].map((product, index) => (
+          {products.map((product, index) => (
             <div
               key={index}
               className="bg-white border rounded-xl shadow-md p-4 text-center relative group overflow-hidden transition-all duration-300 hover:bg-purple-100"
             >
               {/* Image */}
-              <img
-                src={product.image}
-                alt={product.name}
-                className="w-full h-64 object-contain rounded-xl group-hover:scale-110 transition-all duration-300"
-              />
+              <div className="relative w-full h-64">
+                <Image
+                  src={product.image}
+                  alt={product.name}
+                  layout="fill" // Makes the image cover its container
+                  objectFit="contain" // Ensures the image fits within bounds without cropping
+                  className="rounded-xl group-hover:scale-110 transition-transform duration-300"
+                />
+              </div>
 
-              {/* Product Name and Price (Single Line) */}
+              {/* Product Name and Price */}
               <div className="flex justify-between items-center absolute bottom-4 left-4 right-4">
                 <h3 className="text-xl font-semibold text-gray-800 group-hover:text-purple">
                   {product.name}

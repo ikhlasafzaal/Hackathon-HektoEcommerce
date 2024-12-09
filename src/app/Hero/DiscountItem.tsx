@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image"; // Import the Image component if using Next.js
 
 const DiscountItem: React.FC = () => {
   return (
@@ -15,17 +16,16 @@ const DiscountItem: React.FC = () => {
           <div className="flex-1">
             {/* Centered Links */}
             <div className="flex justify-center items-center space-x-6 text-sm text-gray-500 mb-6">
-  <span className="cursor-pointer hover:underline hover:text-pink-500 transition-colors duration-300">
-    Wood Chair
-  </span>
-  <span className="cursor-pointer hover:underline hover:text-pink-500 transition-colors duration-300">
-    Plastic Chair
-  </span>
-  <span className="cursor-pointer hover:underline hover:text-pink-500 transition-colors duration-300">
-    Sofa Collection
-  </span>
-</div>
-
+              <span className="cursor-pointer hover:underline hover:text-pink-500 transition-colors duration-300">
+                Wood Chair
+              </span>
+              <span className="cursor-pointer hover:underline hover:text-pink-500 transition-colors duration-300">
+                Plastic Chair
+              </span>
+              <span className="cursor-pointer hover:underline hover:text-pink-500 transition-colors duration-300">
+                Sofa Collection
+              </span>
+            </div>
 
             {/* Discount Details */}
             <h3 className="text-2xl font-bold text-gray-800 mb-4 text-left">
@@ -64,9 +64,11 @@ const DiscountItem: React.FC = () => {
 
           {/* Right Content */}
           <div className="flex-1">
-            <img
+            <Image
               src="/images/discount.png"
               alt="Chair"
+              width={500} // Set width based on your design
+              height={500} // Set height based on your design
               className="rounded-full shadow-md w-full max-w-sm mx-auto"
             />
           </div>

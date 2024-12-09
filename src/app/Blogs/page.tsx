@@ -30,96 +30,40 @@ const Blogs = () => {
             {/* Blog Content */}
             <div className="md:col-span-2 space-y-8">
               {/* Single Blog */}
-              <div className="bg-white rounded-lg shadow-md p-6">
-                <img
-                  src="/images/lb1.png"
-                  alt="Blog Cover"
-                  className="rounded-lg w-full h-72 object-cover mb-4"
-                />
-                <div className="flex items-center space-x-4 text-gray-500 text-sm">
-                  <div className="flex items-center">
-                    <FaPenNib className="mr-2 text-purple-500" />
-                    <span>Staff Author</span>
+              {["lb1", "lb2", "lb7"].map((img, index) => (
+                <div key={index} className="bg-white rounded-lg shadow-md p-6">
+                  <Image
+                    src={`/images/${img}.png`}
+                    alt={`Blog Cover ${index + 1}`}
+                    width={800}
+                    height={400}
+                    className="rounded-lg w-full h-72 object-cover mb-4"
+                  />
+                  <div className="flex items-center space-x-4 text-gray-500 text-sm">
+                    <div className="flex items-center">
+                      <FaPenNib className="mr-2 text-purple-500" />
+                      <span>Staff Author</span>
+                    </div>
+                    <div className="flex items-center">
+                      <FaCalendarAlt className="mr-2 text-blue-500" />
+                      <span>Aug 09 2020</span>
+                    </div>
                   </div>
-                  <div className="flex items-center">
-                    <FaCalendarAlt className="mr-2 text-blue-500" />
-                    <span>Aug 09 2020</span>
-                  </div>
+                  <h2 className="text-xl font-semibold text-gray-800 mt-4">
+                    Mauris at orci non vulputate diam tincidunt nec.
+                  </h2>
+                  <p className="text-gray-600 mt-2">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Velit
+                    facilisis quis auctor pretium ipsum, eu rutrum.
+                  </p>
+                  <a
+                    href="#"
+                    className="text-pink-500 hover:text-pink-700 font-semibold mt-4 inline-block"
+                  >
+                    Read More →
+                  </a>
                 </div>
-                <h2 className="text-xl font-semibold text-gray-800 mt-4">
-                  Mauris at orci non vulputate diam tincidunt nec.
-                </h2>
-                <p className="text-gray-600 mt-2">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Velit
-                  facilisis quis auctor pretium ipsum, eu rutrum.
-                </p>
-                <a
-                  href="#"
-                  className="text-pink-500 hover:text-pink-700 font-semibold mt-4 inline-block"
-                >
-                  Read More →
-                </a>
-              </div>
-              <div className="bg-white rounded-lg shadow-md p-6">
-                <img
-                  src="/images/lb2.png"
-                  alt="Blog Cover"
-                  className="rounded-lg w-full h-72 object-cover mb-4"
-                />
-                <div className="flex items-center space-x-4 text-gray-500 text-sm">
-                  <div className="flex items-center">
-                    <FaPenNib className="mr-2 text-purple-500" />
-                    <span>Staff Author</span>
-                  </div>
-                  <div className="flex items-center">
-                    <FaCalendarAlt className="mr-2 text-blue-500" />
-                    <span>Aug 09 2020</span>
-                  </div>
-                </div>
-                <h2 className="text-xl font-semibold text-gray-800 mt-4">
-                  Mauris at orci non vulputate diam tincidunt nec.
-                </h2>
-                <p className="text-gray-600 mt-2">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Velit
-                  facilisis quis auctor pretium ipsum, eu rutrum.
-                </p>
-                <a
-                  href="#"
-                  className="text-pink-500 hover:text-pink-700 font-semibold mt-4 inline-block"
-                >
-                  Read More →
-                </a>
-              </div>
-              <div className="bg-white rounded-lg shadow-md p-6">
-                <img
-                  src="/images/lb7.png"
-                  alt="Blog Cover"
-                  className="rounded-lg w-full h-72 object-cover mb-4"
-                />
-                <div className="flex items-center space-x-4 text-gray-500 text-sm">
-                  <div className="flex items-center">
-                    <FaPenNib className="mr-2 text-purple-500" />
-                    <span>Staff Author</span>
-                  </div>
-                  <div className="flex items-center">
-                    <FaCalendarAlt className="mr-2 text-blue-500" />
-                    <span>Aug 09 2020</span>
-                  </div>
-                </div>
-                <h2 className="text-xl font-semibold text-gray-800 mt-4">
-                  Mauris at orci non vulputate diam tincidunt nec.
-                </h2>
-                <p className="text-gray-600 mt-2">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Velit
-                  facilisis quis auctor pretium ipsum, eu rutrum.
-                </p>
-                <a
-                  href="#"
-                  className="text-pink-500 hover:text-pink-700 font-semibold mt-4 inline-block"
-                >
-                  Read More →
-                </a>
-              </div>
+              ))}
             </div>
 
             {/* Sidebar */}
@@ -160,10 +104,12 @@ const Blogs = () => {
                 <div className="space-y-4">
                   {["lb3", "lb4", "lb3"].map((post, index) => (
                     <div key={index} className="flex space-x-4">
-                      <img
+                      <Image
                         src={`/images/${post}.png`}
-                        alt={`Recent Post ${post}`}
-                        className="w-16 h-16 object-cover rounded-lg"
+                        alt={`Recent Post ${index + 1}`}
+                        width={80}
+                        height={80}
+                        className="rounded-lg"
                       />
                       <div>
                         <p className="text-gray-600">
@@ -182,10 +128,12 @@ const Blogs = () => {
                 <div className="space-y-4">
                   {["lb5", "lb5"].map((sale, index) => (
                     <div key={index} className="flex space-x-4">
-                      <img
+                      <Image
                         src={`/images/${sale}.png`}
-                        alt={`Sale Product ${sale}`}
-                        className="w-16 h-16 object-cover rounded-lg"
+                        alt={`Sale Product ${index + 1}`}
+                        width={80}
+                        height={80}
+                        className="rounded-lg"
                       />
                       <div>
                         <p className="text-gray-600">It is a long established fact.</p>
@@ -202,10 +150,12 @@ const Blogs = () => {
                 <div className="grid grid-cols-2 gap-4">
                   {["o1", "o2", "o2", "o1"].map((product, index) => (
                     <div key={index} className="text-center">
-                      <img
+                      <Image
                         src={`/images/${product}.png`}
                         alt={`Offer Product ${index + 1}`}
-                        className="w-full h-24 object-cover rounded-lg"
+                        width={150}
+                        height={150}
+                        className="rounded-lg"
                       />
                       <p className="text-gray-800 mt-2">Product Name {index + 1}</p>
                       <p className="text-gray-500 text-sm">$12.00 - $15.00</p>
@@ -238,9 +188,7 @@ const Blogs = () => {
                     <a
                       key={index}
                       href="#"
-                      className={`px-3 py-1 text-sm 
-                        ${index === 0 ? "text-pink-500 bg-white" : "text-gray-600 hover:bg-white-500 hover:text-pink"} 
-                        transition-colors`}
+                      className="px-3 py-1 text-sm text-gray-600 hover:text-pink-500 transition-colors"
                     >
                       {tag}
                     </a>
@@ -255,8 +203,7 @@ const Blogs = () => {
         <div className="flex justify-center mt-12 mb-9 pb-6">
           <Image
             src="/images/login.png"
-            alt="logo"
-            layout="intrinsic"
+            alt="Logo"
             width={1200}
             height={1500}
             className="max-w-full h-auto mx-auto"

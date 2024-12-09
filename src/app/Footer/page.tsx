@@ -11,12 +11,12 @@ function Footer() {
   <div className="flex items-center">
     <input
       type="search"
-      className="w-2/3 h-12 px-4 text-gray-700 bg-white border border-gray-300 rounded-l-md outline-none placeholder-gray-400 focus:ring-2 focus:ring-[#FB2E86] transition duration-300"
+      className="w-2/3 h-12 text-sm px-4 text-gray-700 bg-white border border-gray-300 rounded-l-md outline-none placeholder-gray-400 focus:ring-2 focus:ring-[#FB2E86] transition duration-300"
       placeholder="Search"
     />
     {/* Sign Up Button */}
-    <button className="w-1/3 h-12 bg-[#FB2E86] text-white font-medium rounded-r-md hover:bg-[#e12b77] transition duration-300">
-      Sign Up
+    <button className="w-1/3 h-12 bg-[#FB2E86] text-white text-sm rounded-r-md hover:bg-[#e12b77] transition duration-300">
+      Subscribe
     </button>
   </div>
   <p className="text-sm text-gray-500 mt-2">

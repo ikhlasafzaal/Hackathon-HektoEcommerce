@@ -1,5 +1,6 @@
 import React from "react";
 import { FaCalendarAlt, FaPenNib } from "react-icons/fa";
+import Image from "next/image"; // Import the Image component
 
 const blogPosts = [
   {
@@ -9,7 +10,7 @@ const blogPosts = [
     title: "Top Essential Trends in 2021",
     description:
       "More of this less hello samlande lied much over tightly circa horse taped mightly.",
-    imgSrc: "/images/b2.png",
+    imgSrc: "/images/b2.png", // Path to the image
   },
   {
     id: 2,
@@ -42,11 +43,14 @@ const LeatestBlog: React.FC = () => {
             className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col"
           >
             {/* Image Section */}
-            <img
-              src={post.imgSrc}
-              alt={post.title}
-              className="h-60 w-full object-cover"
-            />
+            <div className="relative h-60 w-full">
+              <Image
+                src={post.imgSrc}
+                alt={post.title}
+                layout="fill" // Ensures the image covers the container
+                objectFit="cover" // Maintains aspect ratio
+              />
+            </div>
 
             {/* Content Section */}
             <div className="p-4 flex flex-col justify-between flex-grow">
@@ -69,7 +73,7 @@ const LeatestBlog: React.FC = () => {
               <p className="text-sm text-gray-600 mt-2">{post.description}</p>
               <button className="text-blue-500 text-left hover:text-pink-500 underline mt-4 transition-colors duration-300">
                 Read More
-                </button>
+              </button>
             </div>
           </div>
         ))}

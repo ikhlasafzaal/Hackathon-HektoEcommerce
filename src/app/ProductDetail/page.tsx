@@ -1,6 +1,6 @@
 "use client";
-import { FaHeart,FaInstagram,FaTwitter,FaFacebook } from "react-icons/fa";
 import Image from 'next/image';
+import { FaHeart,FaInstagram,FaTwitter,FaFacebook } from "react-icons/fa";
 import TopBar from "../TopBar/page";
 import Header from "../Header/page";
 import Footer from "../Footer/page";
@@ -10,14 +10,14 @@ export default function ProductDetail() {
     const products = [
         {
           id: 1,
-          name: "Women's Fashion Wear",
+          name: "Womens Fashion Wear",
           image: "/images/rp1.png",
           rating: "⭐⭐⭐⭐⭐",
           price: "$450.99"
         },
         {
           id: 2,
-          name: "Men's Casual Wear",
+          name: "Mens Casual Wear",
           image: "/images/rp2.png",
           rating: "⭐⭐⭐⭐",
           price: "$300.00"
@@ -58,27 +58,43 @@ export default function ProductDetail() {
     <div className="grid items-start grid-cols-1 lg:grid-cols-2 gap-6 max-lg:gap-12">
     <div className="w-full lg:sticky top-0 sm:flex gap-2">
   <div className="sm:space-y-3 w-16 max-sm:w-12 max-sm:flex max-sm:mb-4 max-sm:gap-4">
-    <img
-      src="/images/pd2.png"
-      alt="Product2"
-      className="w-full cursor-pointer rounded-md"  // Adjusted height
-    />
-    <img
-      src="/images/pd3.png"
-      alt="Product3"
-      className="w-full cursor-pointer rounded-md"
-    />
-    <img
-      src="/images/pd4.png"
-      alt="Product4"
-      className="w-full cursor-pointer rounded-md"
-    />
+  <Image
+  src="/images/pd2.png"
+  alt="Product"
+  width={500}
+  height={500}
+  className="w-4/5 h-100 rounded-md object-cover"
+  loading="lazy"
+/>
+
+<Image
+  src="/images/pd3.png"
+  alt="Product"
+  width={500}
+  height={500}
+  className="w-4/5 h-100 rounded-md object-cover"
+  loading="lazy"
+/>
+
+<Image
+  src="/images/pd4.png"
+  alt="Product"
+  width={500}
+  height={500}
+  className="w-4/5 h-100 rounded-md object-cover"
+  loading="lazy"
+/>
+
   </div>
-  <img
+  <Image
   src="/images/pd1.png"
   alt="Product"
-  className="w-4/5 h-100 rounded-md object-cover" // Adjusted height
+  width={500}
+  height={500}
+  className="w-4/5 h-100 rounded-md object-cover"
+  loading="lazy"
 />
+
 </div>
 
 
@@ -235,7 +251,7 @@ export default function ProductDetail() {
                 <li className="flex items-start justify-center">
                 <span className="text-green-500 mr-3 mt-1">✔</span>
                 <div>
-                    <strong>Versatile design:</strong> Whether you're decorating a living room, office, or bedroom, this product's design complements various interior styles, adding elegance and functionality to any space.
+                    <strong>Versatile design:</strong> Whether youre decorating a living room, office, or bedroom, this products design complements various interior styles, adding elegance and functionality to any space.
                 </div>
                 </li>
                 <li className="flex items-start justify-center">
@@ -247,7 +263,7 @@ export default function ProductDetail() {
                 <li className="flex items-start justify-center">
                 <span className="text-green-500 mr-3 mt-1">✔</span>
                 <div>
-                    <strong>Available in multiple sizes:</strong> We offer a range of sizes to suit your needs, whether you're looking for something compact or larger to fit your space perfectly.
+                    <strong>Available in multiple sizes:</strong> We offer a range of sizes to suit your needs, whether you are looking for something compact or larger to fit your space perfectly.
                 </div>
                 </li>
             </ul>
@@ -260,20 +276,22 @@ export default function ProductDetail() {
       <h2 className="text-3xl font-bold text-blue-800 text-left mb-6 mt-4">
         Related Products
       </h2>
-
-      {/* Flex container to display the cards in a row */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
   {products.map((product) => (
     <div
       key={product.id}
       className="bg-white shadow-[0_4px_12px_-5px_rgba(0,0,0,0.4)] w-full max-w-sm rounded-lg overflow-hidden font-[sans-serif] mt-4"
     >
       <div className="min-h-[280px]">
-        <img
-          src={product.image}
-          alt={product.name}
-          className="w-full h-[280px] object-cover"
-        />
+        <div className="w-full h-[280px] bg-gray-200 flex justify-center items-center">
+          <Image
+            src={product.image} 
+            alt={product.name}
+            className="object-cover w-full h-full"
+            width={280}  // Set specific width for Image component
+            height={280} // Set specific height for Image component
+          />
+        </div>
       </div>
       <div className="p-6">
         <div className="flex justify-between items-center mb-4">
